@@ -82,3 +82,89 @@ console.log(sortedFruits); // ["Apple", "Banana", "Mango", "Orange"]
 const numbersForInclude = [1, 2, 3, 4, 5];
 const includesThree = numbersForInclude.includes(3);
 console.log(includesThree); // true
+
+
+//************************************************************ */
+
+//Phase 2 : objects
+
+// Task 1: Simple Object
+const book = {
+  title: "The Alchemist",
+  author: "Paulo Coelho",
+  year: 1988
+};
+console.log(book.title)
+
+
+// Task 2: Object with function
+const student = {
+  name: "Ali",
+  marks: 55,
+  getResult: function () {
+   return this.marks > 40 ?"pass":"fail"
+  }
+};
+console.log(student.getResult())
+
+
+// Task 3: Dot vs Bracket
+const laptop = {
+  brand: "Dell",
+  model: "Inspiron 15"
+};
+console.log(`Brand: ${laptop.brand}, Model: ${laptop["model"]}`);
+
+
+// Task 4: Update Object
+const phone = {
+  name: "iPhone",
+  price: 1000
+};
+phone.price = 9000;
+console.log(phone.price); // 9000
+
+
+// Task 5: Delete Property
+const employee = {
+  id: 101,
+  name: "Raheem",
+  department: "IT"
+};
+delete employee.department;
+console.log(employee); // { id: 101, name: 'Raheem' }
+
+const car = {
+  brand: "Toyota",
+  model: "Corolla",
+  year: 2022
+};
+
+for(let key in car){
+  console.log(key,car[key])
+}
+
+
+
+
+const marks = [35, 70, 90, 45, 80];
+
+const squared = marks.map(mar => mar * mar);
+const passed = squared.filter(mar => mar >= 50);
+const first = passed.find(mar => mar >= 90);
+const total = passed.reduce((acc, mar) => acc + mar, 0);
+
+console.log("Squared:", squared);
+console.log("Passed:", passed);
+console.log("First >=90:", first);
+console.log("Total:", total);
+
+
+const marks1 = [35, 70, 90, 45, 80];
+
+const result = marks1
+  .map(mar => mar * mar)
+  .filter(mar => mar >= 50)
+  .reduce((acc, mar) => acc + mar, 0);
+
+console.log(result);
